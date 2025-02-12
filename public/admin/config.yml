@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway  # This uses Git Gateway for authentication (GitHub 
+login)
+  branch: main  # The branch to work with, typically 'main'
+
+media_folder: "public/uploads"  # The folder where media files will be 
+stored
+public_folder: "/uploads"      # The public path to access uploaded files
+
+collections:
+  - name: "blog"  # Name of your collection, e.g., blog posts
+    label: "Blog Posts"  # Label that will be shown in the CMS
+    folder: "content/blog"  # Folder where blog posts are stored
+    create: true  # Allow creating new posts
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
